@@ -1,13 +1,52 @@
-# springboot-aws-lambda
+# classifier-api
 
-Example bootstrap project for creating and deploying a [Spring Boot](https://projects.spring.io/spring-boot/) application to [AWS Lambda](https://aws.amazon.com/lambda/) using the [Serverless Framework](https://serverless.com).
+Simple rest API using AWS LAMBD,spring-boot and serverless framework to save and list classifiers. 
 
-Note: This example uses an in-memory H2 database that is created and initialized when the Lambda function is first invoked. You may notice delay in **"cold starts"**.
+## Request example
 
-### Prerequisites
-- Create an [Amazon Web Services](https://aws.amazon.com) account
-- Install and set-up [Serverless Framework CLI](https://serverless.com)
-- Install [Java 8](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+GET https://wdnc4g5g59.execute-api.us-east-2.amazonaws.com/dev/classifiers
+
+
+Response:
+
+    [
+      {
+          "text": "Teste post AWS Lambda",
+          "classifierId": "123",
+          "languageCode": "pt-BR"
+      },
+      {
+          "text": "TESTANDO",
+          "classifierId": "xxx123",
+          "languageCode": "pt-BR"
+      }
+    ]
+
+GET https://wdnc4g5g59.execute-api.us-east-2.amazonaws.com/dev/classifiers/123
+
+
+Response:
+
+    {
+      "text": "Teste post AWS Lambda",
+      "classifierId": "123",
+      "languageCode": "pt-BR"
+    }
+
+POST https://wdnc4g5g59.execute-api.us-east-2.amazonaws.com/dev/classifiers
+
+
+Body:
+
+    {
+      "text": "Teste post AWS Lambda",
+      "classifierId": "123",
+      "languageCode": "pt-BR"
+   }
+
+## Configure the Environment variables on ESB and deploy
+
+SERVER_PORT
 
 ### Build and Deploy
 - To build, run `./gradlew clean build`
