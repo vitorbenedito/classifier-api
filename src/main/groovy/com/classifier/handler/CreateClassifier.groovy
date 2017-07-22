@@ -22,7 +22,7 @@ class CreateClassifier implements Handler {
 
   @Override
   boolean route(Request request) {
-    request.resourcePath() == '/classifiers' && request.httpMethod() == 'POST'
+    request.resourcePath() == '/classifiers/create' && request.httpMethod() == 'POST'
   }
 
   @Override
