@@ -33,7 +33,7 @@ Response:
       "languageCode": "pt-BR"
     }
 
-POST https://wdnc4g5g59.execute-api.us-east-2.amazonaws.com/dev/classifiers
+POST https://wdnc4g5g59.execute-api.us-east-2.amazonaws.com/dev/classifiers/create
 
 
 Body:
