@@ -41,7 +41,7 @@ functions:
           method: get
           cors: true
       - http:
-          path: classifiers/create
+          path: classifiers
           method: post
           cors: true
       - http:
